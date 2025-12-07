@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pumpScope v4 login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="login-wrap">
+    <div class="login-card glass">
+      <div class="brand" style="justify-content:center;">
+        <span class="dot"></span> pumpScope v4 access
+      </div>
+      <p class="small">neon solana radar. login or make a quick account.</p>
+      <div class="auth-actions">
+        <input id="username" placeholder="username" autocomplete="username">
+        <input id="password" type="password" placeholder="password" autocomplete="current-password">
+        <button class="button" id="create">create account</button>
+        <button class="button" id="login">login</button>
+      </div>
+      <p class="small">accounts live only in your browser. keep it chill.</p>
+      <div class="auth-actions">
+        <button class="button disabled-auth" title="coming soon lol">🟣 discord login</button>
+        <button class="button disabled-auth" title="coming soon lol">🟢 google login</button>
+        <button class="button disabled-auth" title="coming soon lol">💜 phantom wallet login</button>
+        <div class="bad-pill">google / discord / phantom login is coming soon</div>
+      </div>
+    </div>
+  </div>
+  <script src="theme.js"></script>
+  <script>
+  (function(){
+    const username = document.getElementById('username');
+    const password = document.getElementById('password');
+    const loginBtn = document.getElementById('login');
+    const createBtn = document.getElementById('create');
 
+    const saveAccount = () => {
+      if(!username.value || !password.value){
+        alert('need user + pass fr');
+        return;
+      }
+      const accounts = JSON.parse(localStorage.getItem('psv4-accounts')||'{}');
+      accounts[username.value] = password.value;
+      localStorage.setItem('psv4-accounts', JSON.stringify(accounts));
+      localStorage.setItem('psv4-user', username.value);
+      goHome();
+    };
+
+    const login = () => {
+      const accounts = JSON.parse(localStorage.getItem('psv4-accounts')||'{}');
+      if(accounts[username.value] && accounts[username.value] === password.value){
+        localStorage.setItem('psv4-user', username.value);
+        goHome();
+      } else {
+        alert('wrong creds. maybe create it first?');
+      }
+    };
+
+    const goHome = () => {
+      document.body.style.opacity = '0';
+      setTimeout(() => location.href = 'index.html', 260);
+    };
+
+    loginBtn.addEventListener('click', login);
+    createBtn.addEventListener('click', saveAccount);
+    document.addEventListener('keypress', (e) => { if(e.key==='Enter') login(); });
+  })();
+  </script>
+</body>
+</html>
