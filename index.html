@@ -1,55 +1,67 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>pumpScope v4 - solana radar</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body onload="ensureLogin()">
-  <div class="app-shell">
-    <div class="top-bar">
-      <div class="brand"><span class="dot"></span> pumpScope v4</div>
-      <div class="nav-right" style="display:flex; gap:8px; align-items:center;">
-        <button class="hamburger" aria-label="menu">☰</button>
-        <div class="nav-links">
-          <a href="index.html">tokens</a>
-          <a href="wallet.html">wallet analyzer</a>
-          <a href="generator.html">meme tools</a>
-          <button onclick="localStorage.removeItem('psv4-user');location.href='login.html'">logout</button>
-        </div>
-        <button class="theme-toggle" title="toggle"></button>
-      </div>
-    </div>
-
-    <div class="glass">
-      <div class="tabs" id="timeTabs">
-        <div class="tab active" data-frame="h1">1h</div>
-        <div class="tab" data-frame="h6">6h</div>
-        <div class="tab" data-frame="h24">24h</div>
-        <div class="tab" data-frame="7d">7d</div>
-      </div>
-      <div class="swipe-hint">swipe tabs on mobile to flip timeframes</div>
-      <div class="token-grid" id="tokenGrid"></div>
-    </div>
-
-    <div class="footer">made w/ pumpScope v4 • solana neon radar</div>
-  </div>
-
-  <div class="modal-backdrop" id="tokenModal">
-    <div class="modal-content glass">
-      <div class="modal-header">
-        <div class="brand"><span class="dot"></span> pumpScope v4 token</div>
-        <button class="button" id="closeModal">close</button>
-      </div>
-      <div id="modalBody"></div>
-    </div>
-  </div>
-
-  <script src="theme.js"></script>
-  <script src="modal.js"></script>
-  <script src="main.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
-</body>
-</html>
-
+diff --git a/index.html b/index.html
+index 8b137891791fe96927ad78e64b0aad7bded08bdc..ff832d1b2b34e3cc173056b33aa7c90f33e12a8c 100644
+--- a/index.html
++++ b/index.html
+@@ -1 +1,62 @@
++<!DOCTYPE html>
++<html lang="en" data-theme="dark">
++<head>
++  <meta charset="UTF-8">
++  <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <title>pumpScope v4 - solana radar</title>
++  <link rel="stylesheet" href="styles.css">
++</head>
++<body onload="ensureLogin()">
++  <div class="app-shell">
++    <div class="top-bar">
++      <div class="brand"><span class="dot"></span> pumpScope v4</div>
++      <div class="nav-right" style="display:flex; gap:8px; align-items:center;">
++        <button class="hamburger" aria-label="menu">☰</button>
++        <div class="nav-links">
++          <a href="index.html">tokens</a>
++          <a href="wallet.html">wallet analyzer</a>
++          <a href="generator.html">meme tools</a>
++          <button onclick="localStorage.removeItem('pumpscope_authed');location.href='login.html'">logout</button>
++        </div>
++        <button class="theme-toggle" title="toggle"></button>
++      </div>
++    </div>
+ 
++    <div class="glass">
++      <div class="currency-toggle">
++        <span class="small muted">view prices in</span>
++        <div class="currency-pills">
++          <button class="button pill active" data-currency="usd">usd</button>
++          <button class="button pill" data-currency="eur">eur</button>
++          <button class="button pill" data-currency="sol">sol</button>
++        </div>
++      </div>
++      <div class="tabs" id="timeTabs">
++        <div class="tab active" data-frame="h1">1h</div>
++        <div class="tab" data-frame="h6">6h</div>
++        <div class="tab" data-frame="h24">24h</div>
++        <div class="tab" data-frame="7d">7d</div>
++      </div>
++      <div class="swipe-hint">swipe tabs on mobile to flip timeframes</div>
++      <div class="token-grid" id="tokenGrid"></div>
++    </div>
++
++    <div class="footer">made w/ pumpScope v4 • solana neon radar</div>
++  </div>
++
++  <div class="modal-backdrop" id="tokenModal">
++    <div class="modal-content glass">
++      <div class="modal-header">
++        <div class="brand"><span class="dot"></span> pumpScope v4 token</div>
++        <button class="button" id="closeModal">close</button>
++      </div>
++      <div id="modalBody"></div>
++    </div>
++  </div>
++
++  <script src="theme.js"></script>
++  <script src="modal.js"></script>
++  <script src="main.js"></script>
++  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
++</body>
++</html>
