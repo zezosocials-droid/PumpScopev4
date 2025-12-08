@@ -1,44 +1,49 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>pumpScope v4 - meme tools</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body onload="ensureLogin()">
-  <div class="app-shell">
-    <div class="top-bar">
-      <div class="brand"><span class="dot"></span> pumpScope v4</div>
-      <div style="display:flex; gap:8px; align-items:center;">
-        <button class="hamburger" aria-label="menu">☰</button>
-        <div class="nav-links">
-          <a href="index.html">tokens</a>
-          <a href="wallet.html">wallet analyzer</a>
-          <a href="generator.html">meme tools</a>
-          <button onclick="localStorage.removeItem('psv4-user');location.href='login.html'">logout</button>
-        </div>
-        <button class="theme-toggle"></button>
-      </div>
-    </div>
-
-    <div class="glass" style="margin-bottom:12px;">
-      <div class="brand"><span class="dot"></span> meme chaos lab</div>
-      <p class="small">pulling imgflip + reddit hot memes. chaos meter uses pump.fun volume spike heat.</p>
-      <div class="flex-row" style="gap:8px; flex-wrap:wrap;">
-        <button class="button" id="randomMeme">random meme</button>
-        <button class="button" id="refreshTrending">refresh trending</button>
-        <div class="badge" id="chaosMeter">chaos meter: --</div>
-      </div>
-    </div>
-
-    <div class="meme-grid" id="memeGrid"></div>
-
-    <div class="footer">memes made w/ pumpScope v4</div>
-  </div>
-
-  <script src="theme.js"></script>
-  <script src="generator.js"></script>
-</body>
-</html>
+diff --git a/generator.html b/generator.html
+index 8b137891791fe96927ad78e64b0aad7bded08bdc..1a4df73243315b5af0d7ff6e24b079e77a9c90bc 100644
+--- a/generator.html
++++ b/generator.html
+@@ -1 +1,43 @@
++<!DOCTYPE html>
++<html lang="en" data-theme="dark">
++<head>
++  <meta charset="UTF-8">
++  <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <title>pumpScope v4 - meme tools</title>
++  <link rel="stylesheet" href="styles.css">
++</head>
++<body onload="ensureLogin()">
++  <div class="app-shell">
++    <div class="top-bar">
++      <div class="brand"><span class="dot"></span> pumpScope v4</div>
++      <div style="display:flex; gap:8px; align-items:center;">
++        <button class="hamburger" aria-label="menu">☰</button>
++        <div class="nav-links">
++          <a href="index.html">tokens</a>
++          <a href="wallet.html">wallet analyzer</a>
++          <a href="generator.html">meme tools</a>
++          <button onclick="localStorage.removeItem('pumpscope_authed');location.href='login.html'">logout</button>
++        </div>
++        <button class="theme-toggle"></button>
++      </div>
++    </div>
+ 
++    <div class="glass" style="margin-bottom:12px;">
++      <div class="brand"><span class="dot"></span> meme chaos lab</div>
++      <p class="small">pulling imgflip + reddit hot memes. chaos meter uses pump.fun volume spike heat.</p>
++      <div class="flex-row" style="gap:8px; flex-wrap:wrap;">
++        <button class="button" id="randomMeme">random meme</button>
++        <button class="button" id="refreshTrending">refresh trending</button>
++        <div class="badge" id="chaosMeter">chaos meter: --</div>
++      </div>
++    </div>
++
++    <div class="meme-grid" id="memeGrid"></div>
++
++    <div class="footer">memes made w/ pumpScope v4</div>
++  </div>
++
++  <script src="theme.js"></script>
++  <script src="generator.js"></script>
++</body>
++</html>
 
